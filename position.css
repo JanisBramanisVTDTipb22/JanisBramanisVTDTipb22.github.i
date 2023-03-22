@@ -4,6 +4,7 @@ header {
     top: 0;
     left: 0;
     width: 100vw;
+    z-index: 4;
 
 }
 
@@ -12,9 +13,12 @@ ul {
     justify-content: space-around;
 }
 
+main {
+    margin-top: 100px;
+}
+
 li {
     list-style: none;
-    transition: transform 0.3s;
 }
 
 li:hover {
@@ -24,16 +28,11 @@ li:hover {
 a {
     text-decoration: none;
     color: white;
-    transition: color 0.3s;
+    transition: color 0.9s;
 }
 
 a:hover {
     color: yellow;
-}
-
-
-main {
-    margin-top: 80px;
 }
 
 .cube {
@@ -52,4 +51,48 @@ main {
     right: 10px;
     width: 100px;
     z-index: 4;
+}
+
+.burger {
+    display: none;
+}
+
+.check {
+    display: none;
+}
+
+@media (max-width: 305px){
+    .burger {
+        display: block;
+    }
+
+    ul {
+        padding: absolute;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
+        background-color: black;
+        margin: 0;
+        width: 100vw;
+        padding-left: 0;
+        align-items: center;
+    }
+    li{
+        padding-bottom: 20px;
+    }
+
+    .check {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        opacity: 0.5;
+        cursor: pointer;
+    }
+
+    .check:checked + ul{
+        display: flex;
+    }
 }
